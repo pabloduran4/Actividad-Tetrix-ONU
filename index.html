@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Tetrix</title>
+  
+  <link rel="stylesheet" href="estilos.css">
+  <link rel="stylesheet" href="jquery-ui-1.12.1/jquery-ui.css">
+  <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+</head>
+<body>
+  <header id="rectangulo">
+     <p id="titulo">Obligaciones de los Estados en el procedimiento de reconocimiento de la condicion de refugiado</p>
+   </header>
+   
+   <div id="instruccion">
+     <p>Relacione los conceptos de la columna izquierda con los que van apareciendo en la derecha. Arrastre las piezas de Tetris y suéltelas en el espacio vacío, según corresponda.</p>
+   </div>
+   
+   <section id="envoltura">
+    <article id="contenedor-tablero">
+     <img src="img/tetrisSinPiezas.png" alt="textrix" id="tablero">
+     <div id="correcto-azul"></div>
+     <div id="correcto-naranja"></div>
+     <div id="correcto-rojo"></div>
+     <div id="correcto-amarillo"></div>
+     <div id="correcto-verde"></div>
+    
+     </article>
+     
+     <article id="contenedor-piezas">
+       <img id="azul" src="img/tetrisblue.png" alt="">
+       <p id="texto-azul">Discriminación y<br>marginación social</p>
+       
+       <img src="img/tetrisred.png" alt="rojo" id="rojo" class="u">
+       <p id="texto-rojo">Garantía de acceso<br>a la nacionalidad</p>
+       
+       <img src="img/tetrisorange.png" alt="naranja" id="naranja">
+       <p id="texto-naranja">Igualdad y no<br>discriminación</p>
+       
+       <img src="img/tetrisyellow.png" alt="naranja" id="amarillo">
+       <p id="texto-amarillo">Medidas de<br>Protección integral</p>
+       
+       <img src="img/tetrisgreen.png" alt="verde" id="verde">
+       <p id="texto-verde">Aplicación de la<br>Convención de 1951</p>
+       
+       <img id="ganar" src="img/felicitaciones.png" alt="ganar">
+       <a href="javascript:history.back(-1);"><img id="cerrar" src="img/cerrarActividad.png" alt="ganar"></a>
+       
+       <a href="javascript:history.back(-1);"><img id="cerrar2" src="img/cerrarActividad.png" alt="ganar"></a>
+     </article>
+     
+     <article id="contenedorRetro">
+         <p id="correctoNaranja">Correcto. Es la respuesta correcta<br>
+         <b>Derecho al trabajo:</b> se debe aplicar en condiciones de igualdad y no discriminación.</p>
+         
+         <p id="correctoRojo">Correcto. Es la respuesta correcta<br>
+         <b>Normas para evitar la apatridia: </b>se garantiza con normas que permitan a personas que requieran acceder a la protección internacional (por no poseer ninguna nacionalidad) el acceso a la nacionalidad del país del cual invocan protección.</p>
+         
+         <p id="correctoAmarillo">Correcto. Es la respuesta correcta<br>
+            <b>Acceso a los servicios de salud:</b> son manifestación de las medidas de protección integral, por medio del cual los estados garantizan los derechos de todos los habitantes que se encuentran en su territorio.</p>
+         
+         <p id="correctoAzul">Correcto. Es la respuesta correcta<br>
+             <b>Explotación laboral:</b> se enmarca en una situación de discriminación y marginación social, que lesiona los derechos de los trabajadores.
+         
+         <p id="correctoVerde">Correcto. Es la respuesta correcta<br>
+             <b>Reconocimiento de la condición de refugiado:</b> se desarrolla mediante la aplicación de un procedimiento ajustado a la Convención de 1951 y las normas que la adicionen o complementen.
+         
+     </article>
+     
+   </section>
+   
+   <script src="jquery-3.2.1.min.js"></script>
+   <script src="jquery-ui-1.12.1/jquery-ui.min.js"></script>
+   <script src="jquery.ui.touch-punch.js"></script>
+    
+   
+   <script>
+    $(document).ready(function(){
+      var contador = 0
+       $('#azul').draggable({revert: "invalid"});
+      $('#naranja').draggable({revert: "invalid"});
+      $('#rojo').draggable({revert: "invalid"});
+      $('#amarillo').draggable({revert: "invalid"});
+      $('#verde').draggable({revert: "invalid"});
+      
+      
+      
+      $('#correcto-azul').droppable({
+        accept: "#azul",
+        drop: function( event, ui ){
+          $('#correcto-azul').css(
+			 "background-color" , "rgba(0, 255, 0, 0.2)"
+		 );
+        $('#verde').css({
+      "opacity": "1"
+    });
+      
+       $('#texto-verde').css({
+      "opacity": "1"
+    }); 
+            
+        $('#correctoAzul').css(
+            "display" , "block"
+        );
+                    
+        $('#correctoAmarillo').css(
+            "display" , "none"
+        );
+                    
+        $('#correctoRojo').css(
+            "display" , "none"
+        );
+                    
+        $('#correctoVerde').css(
+            "display" , "none"
+        );
+                    
+        $('#correctoNaranja').css(
+            "display" , "none"
+        );
+         
+      }
+      
+         });
+      
+      
+     
+      
+      
+       $('#correcto-naranja').droppable({
+        accept: "#naranja",
+        drop: function( event, ui ){
+          $('#correcto-naranja').css(
+			 "background-color" , "rgba(0, 255, 0, 0.2)"
+		 );
+            $('#rojo').css({
+      "opacity": "1"
+    });
+      
+       $('#texto-rojo').css({
+      "opacity": "1"
+    }); 
+            
+        $('#correctoAzul').css(
+            "display" , "none"
+        );
+                    
+        $('#correctoAmarillo').css(
+            "display" , "none"
+        );
+                    
+        $('#correctoRojo').css(
+            "display" , "none"
+        );
+                    
+        $('#correctoVerde').css(
+            "display" , "none"
+        );
+                    
+        $('#correctoNaranja').css(
+            "display" , "block"
+        );
+         
+           
+         }
+      });
+      
+       $('#correcto-rojo').droppable({
+        accept: "#rojo",
+        drop: function( event, ui ){
+          $('#correcto-rojo').css(
+			 "background-color" , "rgba(0, 255, 0, 0.2)"
+		 );
+            $('#amarillo').css({
+      "opacity": "1"
+    });
+      
+       $('#texto-amarillo').css({
+      "opacity": "1"
+    });  
+            
+        $('#correctoAzul').css(
+            "display" , "none"
+        );
+                    
+        $('#correctoAmarillo').css(
+            "display" , "none"
+        );
+                    
+        $('#correctoRojo').css(
+            "display" , "block"
+        );
+                    
+        $('#correctoVerde').css(
+            "display" , "none"
+        );
+                    
+        $('#correctoNaranja').css(
+            "display" , "none"
+        );
+         
+             
+         }
+      });
+      
+        $('#correcto-amarillo').droppable({
+        accept: "#amarillo",
+        drop: function( event, ui ){
+          $('#correcto-amarillo').css(
+			 "background-color" , "rgba(0, 255, 0, 0.2)"
+		 );
+         $('#azul').css({
+      "opacity": "1"
+    });
+      
+       $('#texto-azul').css({
+      "opacity": "1"
+    });  
+            
+        $('#correctoAzul').css(
+            "display" , "none"
+        );
+                    
+        $('#correctoAmarillo').css(
+            "display" , "block"
+        );
+                    
+        $('#correctoRojo').css(
+            "display" , "none"
+        );
+                    
+        $('#correctoVerde').css(
+            "display" , "none"
+        );
+                    
+        $('#correctoNaranja').css(
+            "display" , "none"
+        );
+         
+             
+         }
+      });
+      
+       $('#correcto-verde').droppable({
+        accept: "#verde",
+        drop: function( event, ui ){
+          $('#correcto-verde').css(
+			 "background-color" , "rgba(0, 255, 0, 0.2)"
+		 );
+            
+          
+            
+        $('#correctoAzul').css(
+            "display" , "none"
+        );
+                    
+        $('#correctoAmarillo').css(
+            "display" , "none"
+        );
+                    
+        $('#correctoRojo').css(
+            "display" , "none"
+        );
+                    
+        $('#correctoVerde').css(
+            "display" , "block"
+        );
+                    
+        $('#correctoNaranja').css(
+            "display" , "none"
+        );
+         
+            
+       $('#ganar').css({
+      "display": "block"
+    });
+      
+       $('#cerrar').css({
+      "display": "block"
+    });
+             
+          
+         }
+      });
+      
+   
+   
+       
+      
+      
+    
+      
+      });//Ultimooooo
+          
+      
+     
+     
+      
+   
+      
+     
+      
+   </script>
+</body>
+</html>

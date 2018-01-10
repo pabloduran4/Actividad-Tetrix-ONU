@@ -1,0 +1,643 @@
+*{
+  margin: 0;
+  padding: 0;
+}
+#rectangulo{
+	background-color: #4272B6;
+    text-align: center;
+    color: white;
+    height: 42px;
+    padding-top: 10px;
+    margin-bottom: 20px;
+    box-shadow: 0px 0px 15px black;
+    width: 100%;
+}
+
+#titulo{
+    font-family: 'Lato';
+    font-weight: 700;
+    display: block;
+    font-size: 20px;
+}
+
+#envoltura{
+  display: flex;
+    flex-direction: row;
+  margin-top: 50px;
+    margin: auto;
+    width: 100%;
+    min-width: 453px;
+}
+
+body{
+  background-image: url(img/bg.png);
+    font-family: 'Lato';
+    min-width: 453px;
+}
+
+#contenedor-tablero{
+    margin-left: 5%;
+    margin-top: 30px;
+    width: 800px;
+}
+
+#tablero{
+  width: 640px;
+}
+
+#instruccion{
+  text-align: center;
+    height: 21px;
+    font-size: 1.2rem;
+    font-weight: 700;
+}
+
+#contenedor-piezas{
+  background-color: rgba(255,255,255,0.5);
+    border-radius: 50px;
+    margin-top: 40px;
+      width: 640px;
+  max-height: 618px;
+ 
+}
+
+#contenedorRetro{
+    display: block;
+    position: absolute;
+    top: 800px;
+    left: 90px;
+    background-color: rgba(255, 255, 255, 0.5);
+    border-radius: 20px;
+    height: 100px;
+    width: 1440px;
+    padding-right: 50px;
+}
+
+#correctoNaranja, #correctoRojo, #correctoVerde, #correctoAmarillo, #correctoAzul {
+    font-family: 'Lato';
+    font-size: 1.2rem;
+    color: green;
+    margin-left: 50px;
+    text-align: left;
+    margin-top: 20px;
+    display: none;
+}
+
+#contenedorRetro p b{
+    font-weight: 700;
+}
+
+
+
+/*-------piezas----------*/
+#azul{
+      width: 122px;
+    margin-left: 30px;
+    margin-top: 50px;
+    opacity: 0;
+}
+
+#rojo{
+    
+      width: 122px;
+    position: absolute;
+    top: 183px;
+    margin-left: 247px;
+  opacity: 0;
+}
+
+#naranja{
+    width: 122px;
+    position: absolute;
+    top: 495px;
+    margin-left: 30px;
+  opacity: 1;
+}
+
+#amarillo{
+  
+    width: 122px;
+    position: absolute;
+    top: 495px;
+    margin-left: 450px;
+  opacity: 0;
+
+}
+
+#verde{
+    width: 195px;
+    position: absolute;
+    top: 210px;
+    margin-left: 426px;
+  opacity: 0;
+}
+/*-------piezas----------*/
+
+
+#texto-azul{
+    margin-left: 30px;
+    font-size: 112%;
+    opacity: 0;
+}
+
+#texto-rojo{
+  
+      font-size: 112%;
+    position: absolute;
+    top: 371px;
+    margin-left: 239px;
+    opacity: 0;
+}
+
+#texto-naranja{  
+    font-size: 112%;
+    margin-left: 30px;
+    position: absolute;
+    top: 685px;
+  opacity: 1;
+}
+
+#texto-amarillo{  
+   font-size: 112%;
+    margin-left: 439px;
+    position: absolute;
+    top: 685px;
+  opacity: 0;
+}
+
+#texto-verde{
+      font-size: 112%;
+    margin-left: 429px;
+    position: absolute;
+    top: 371px;
+  opacity: 0;
+}
+
+/*------------correctos----------------*/
+#correcto-azul{
+    width: 124px;
+    height: 188px;
+    background-color: transparent;
+
+    position: absolute;
+    top: 166px;
+    margin-left: 473px;
+}
+
+#correcto-naranja{
+     width: 124px;
+    height: 188px;
+    background-color: transparent;
+
+    position: absolute;
+    top: 534px;
+    margin-left: 474px;
+}
+
+#correcto-rojo{
+     width: 124px;
+    height: 188px;
+    background-color: transparent;
+
+    position: absolute;
+    top: 166px;
+    margin-left: 289px;
+}
+
+#correcto-amarillo{
+   width: 124px;
+    height: 188px;
+    background-color: transparent;
+
+    position: absolute;
+    top: 475px;
+    margin-left: 291px;
+}
+
+#correcto-verde{
+    width: 188px;
+    height: 124px;
+    background-color: transparent;
+
+    position: absolute;
+    top: 352px;
+    margin-left: 350px;
+}
+
+#ganar{
+  width: 700px;
+    position: absolute;
+    top: 200px;
+    right: 30%;
+ display: none;
+}
+
+#cerrar{
+    width: 30px;
+    position: absolute;
+    top: 180px;
+    left: 70%;
+    display: none;
+}
+
+#cerrar2{
+    width: 30px;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    display: block;
+}
+
+
+@media only screen and (max-width: 1490px) {
+    #contenedor-tablero{
+    margin-left: 0;
+    }
+    
+    #contenedorRetro{
+    left: 0px;
+    width: 1395px;
+    }
+}
+
+@media only screen and (max-width: 1410px) {
+    #contenedor-tablero{
+        width: 700px;
+    }
+    
+    #tablero{
+      width: 540px;
+    }
+    
+    #correcto-azul{
+        margin-left: 399px;
+        width: 105px;
+        height: 157px;
+        top: 161px;       
+    }
+    
+    #correcto-naranja{
+        margin-left: 399px;
+        width: 105px;
+        height: 157px;
+        top: 472px;
+    }
+    
+    #correcto-amarillo{
+        margin-left: 245px;
+        width: 105px;
+        height: 157px;
+        top: 421px;      
+    }
+    
+    #correcto-rojo{
+        margin-left: 245px;
+        width: 105px;
+        height: 157px;
+        top: 161px;
+    }
+    
+    #correcto-verde{
+         margin-left: 294px;
+        width: 160px;
+        height: 106px;
+        top: 315px;       
+    }
+    
+    #azul{
+        width: 100px;
+    }
+    
+    #naranja{
+        width: 100px;
+        top: 440px;
+    }
+    
+    #rojo{
+        width: 100px;
+        top: 183px;
+    }
+    
+    #verde{
+        top: 200px;
+        width: 155px;
+    }
+    
+    #amarillo{
+        width: 100px;
+        top: 440px;
+    }
+    
+    #texto-azul{
+        font-size: 1rem;
+    }
+    
+    #texto-naranja{
+        font-size: 1rem;
+        top: 600px;
+    }
+    
+    #texto-rojo{
+        font-size: 1rem;
+        top: 338px;
+    }
+    
+    #texto-verde{
+        font-size: 1rem;
+        top: 338px;
+    }
+    
+    #texto-amarillo{
+        font-size: 1rem;
+        top: 600px;
+    }
+    
+    #contenedorRetro{
+        width: 1240px;
+    }
+    
+    #correctoNaranja, #correctoRojo, #correctoVerde, #correctoAmarillo, #correctoAzul{
+        margin-left: 20px;
+    }
+}
+
+@media only screen and (max-width: 1215px) {
+    #contenedor-tablero{
+        width: 450px;
+    }
+    
+    #contenedor-piezas{
+        width: 515px;
+    }
+    
+    #tablero{
+      width: 440px;
+    }
+    
+    #correcto-azul{
+        margin-left: 325px;
+        width: 85px;
+        height: 129px;
+        top: 153px;       
+    }
+    
+    #correcto-naranja{
+        margin-left: 325px;
+        width: 85px;
+        height: 129px;
+        top: 407px;
+    }
+    
+    #correcto-amarillo{
+        margin-left: 200px;
+        width: 85px;
+        height: 129px;
+        top: 365px;      
+    }
+    
+    #correcto-rojo{
+        margin-left: 200px;
+        width: 85px;
+        height: 129px;
+        top: 154px;
+    }
+    
+    #correcto-verde{
+         margin-left: 240px;
+        width: 130px;
+        height: 88px;
+        top: 279px;       
+    }
+    
+    #azul{
+        width: 83px;
+        margin-left: 15px;
+        margin-top: 25px;
+    }
+    
+    #naranja{
+        width: 83px;
+        top: 370px;
+        margin-left: 15px;
+    }
+    
+    #rojo{
+        width: 83px;
+        top: 158px;
+        margin-left: 195px;
+    }
+    
+    #verde{
+        top: 178px;
+        width: 125px;
+        margin-left: 370px;
+    }
+    
+    #amarillo{
+        width: 83px;
+        top: 370px;
+        margin-left: 375px;
+    }
+    
+    #texto-azul{
+        font-size: 0.8rem;
+        margin-left: 15px;
+    }
+    
+    #texto-naranja{
+        font-size: 0.8rem;
+        top: 500px;
+    }
+    
+    #texto-rojo{
+        font-size: 0.8rem;
+        top: 287px;
+        margin-left: 185px;
+    }
+    
+    #texto-verde{
+        font-size: 0.8rem;
+        top: 287px;
+        margin-left: 365px;
+    }
+    
+    #texto-amarillo{
+        font-size: 0.8rem;
+        top: 500px;
+        margin-left: 370px;
+    }
+    
+    #cerrar{
+        right: 390px;
+    }
+    
+    #contenedorRetro{
+        top: 600px;
+        width: 925px;
+    }
+    
+    #correctoNaranja, #correctoRojo, #correctoVerde, #correctoAmarillo, #correctoAzul{
+        margin-left: 10px;
+        font-size: 1.1rem;
+    }
+    
+}
+
+
+@media only screen and (max-width: 979px) {
+    #envoltura{
+        flex-direction: column;
+    }
+    
+    #titulo{
+        font-size: 1rem;
+    }
+    
+    #instruccion{
+        font-size: 0.9rem;
+    }
+    
+    #contenedor-tablero{
+        margin-top: 30px;
+        width: 450px;
+    }
+    
+    #contenedor-piezas{
+        width: 450px;
+        height: 515px;
+    }
+    
+    #tablero{
+      width: 440px;
+    }
+    
+    #correcto-azul{
+        margin-left: 325px;
+        width: 85px;
+        height: 129px;
+        top: 153px;       
+    }
+    
+    #correcto-naranja{
+        margin-left: 325px;
+        width: 85px;
+        height: 129px;
+        top: 407px;
+    }
+    
+    #correcto-amarillo{
+        margin-left: 200px;
+        width: 85px;
+        height: 129px;
+        top: 365px;      
+    }
+    
+    #correcto-rojo{
+        margin-left: 200px;
+        width: 85px;
+        height: 129px;
+        top: 154px;
+    }
+    
+    #correcto-verde{
+         margin-left: 240px;
+        width: 130px;
+        height: 88px;
+        top: 279px;       
+    }
+    
+    #azul{
+        width: 83px;
+        margin-left: 15px;
+        margin-top: 25px;
+    }
+    
+    #naranja{
+        width: 83px;
+        top: 850px;
+        margin-left: 15px;
+    }
+    
+    #rojo{
+        width: 83px;
+        top: 636px;
+        margin-left: 165px;
+    }
+    
+    #verde{
+        top: 655px;
+        width: 125px;
+        margin-left: 300px;
+    }
+    
+    #amarillo{
+        width: 83px;
+        top: 850px;
+        margin-left: 300px;
+    }
+    
+    #texto-azul{
+        font-size: 0.8rem;
+        margin-left: 15px;
+    }
+    
+    #texto-naranja{
+        font-size: 0.8rem;
+        top: 980px;
+    }
+    
+    #texto-rojo{
+        font-size: 0.8rem;
+        top: 765px;
+        margin-left: 155px;
+    }
+    
+    #texto-verde{
+        font-size: 0.8rem;
+        top: 765px;
+        margin-left: 300px;
+    }
+    
+    #texto-amarillo{
+        font-size: 0.8rem;
+        top: 980px;
+        margin-left: 280px;
+    }
+    
+    #cerrar{
+        right: 390px;
+    }
+    
+    #ganar{
+      width: 400px;
+        position: absolute;
+        top: 200px;
+        left: 50px;
+     display: none;
+    }
+
+    #cerrar{
+        width: 30px;
+        position: absolute;
+        top: 180px;
+        left: 425px;
+        display: none;
+    }
+    
+    #contenedorRetro{
+        top: 1150px;
+        width: 400px;
+        padding-right: 5px;
+    }
+    
+    #correctoNaranja, #correctoRojo, #correctoVerde, #correctoAmarillo, #correctoAzul{
+        margin-top: 10px;
+        margin-left: 5px;
+        font-size: 0.8rem;
+    }
+
+}
+
+
+
+
